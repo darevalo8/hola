@@ -1,0 +1,25 @@
+{% extends "conquers/base_gastos.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <h1>hello {{ user.username }}!</h1>
+
+        <a href="{% url 'conquers:logout' %}">Logout</a>
+    {% else %}
+        <h1>Hola!</h1>
+        <a href="{% url 'conquers:register' %}">Registrarse</a>
+        <a href="{% url 'conquers:login' %}">Login</a>
+
+    {% endif %}
+    {% if tipo == 1 %}
+        <p>Menus</p>
+    {% elif tipo == 2 %}
+        <a href="{% url 'conquers:activity' %}">Envio de actividades</a>
+    {% else %}
+        <p>Menus</p>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "conquers/base_gastos.html" %}
+
+{% block content %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type= "submit" value="Enviar">
+    </form>
+    <a href="{% url 'conquers:index' %}">Volever</a>
+{% endblock content %}
